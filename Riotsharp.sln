@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4976E736-DCA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riotsharp.Core", "src\Riotsharp.Core\Riotsharp.Core.csproj", "{362A60F1-022A-4078-BD89-31F346CADC86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riotsharp.Tests", "Riotsharp.Tests\Riotsharp.Tests.csproj", "{38B63947-9E6B-49C9-9AC1-FA5D0A90624E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{362A60F1-022A-4078-BD89-31F346CADC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362A60F1-022A-4078-BD89-31F346CADC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362A60F1-022A-4078-BD89-31F346CADC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B63947-9E6B-49C9-9AC1-FA5D0A90624E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B63947-9E6B-49C9-9AC1-FA5D0A90624E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B63947-9E6B-49C9-9AC1-FA5D0A90624E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B63947-9E6B-49C9-9AC1-FA5D0A90624E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{362A60F1-022A-4078-BD89-31F346CADC86} = {4976E736-DCAB-49A3-B48A-659968333807}
