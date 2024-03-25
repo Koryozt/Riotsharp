@@ -4,3 +4,6 @@
 
 /Riotsharp.Tests/apiKey.txt
 /.vs
+/src/Riotsharp.LeagueOfLegends/obj
+/src/Riotsharp.Account/obj
+/src/Riotsharp.Core/bin/Debug/net8.0

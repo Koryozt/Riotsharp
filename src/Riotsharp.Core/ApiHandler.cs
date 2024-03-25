@@ -2,7 +2,7 @@
 
 namespace Riotsharp.Core;
 
-abstract class ApiHandler
+public abstract class ApiHandler
 {
     private readonly HttpClient _client = new();
     private readonly string _baseAddress = "https://x.api.riotgames.com/";
@@ -11,7 +11,6 @@ abstract class ApiHandler
     protected ApiHandler(string apiKey)
     {
         ApiKey = apiKey;
-        _client.DefaultRequestHeaders.Add("X-Riot-Token", ApiKey);
     }
 
     protected async Task<HttpResponseMessage> ExecuteRawAsync(
@@ -37,11 +36,12 @@ abstract class ApiHandler
             RequestUri = uri
         };
 
+        request.Headers.Add("X-Riot-Token", ApiKey);
+
         HttpResponseMessage response = await 
             _client.SendAsync(request);
 
         return response;
-
     }
 
     private Uri BuildUrl(
