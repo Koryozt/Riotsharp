@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Newtonsoft.Json;
+using Riotsharp.Core.Exceptions;
+using System.Text;
 
 namespace Riotsharp.Core;
 
@@ -41,7 +43,21 @@ public abstract class ApiHandler
         HttpResponseMessage response = await 
             _client.SendAsync(request);
 
-        return response;
+        try
+        {
+            response.EnsureSuccessStatusCode();
+
+            return response;
+
+        }
+        catch (HttpRequestException)
+        {
+            Status statusError = JsonConvert
+                .DeserializeObject<Status>(
+                    await response.Content.ReadAsStringAsync())!;
+
+            throw new UnsuccesfulRequestException(statusError);
+        }
     }
 
     private Uri BuildUrl(
