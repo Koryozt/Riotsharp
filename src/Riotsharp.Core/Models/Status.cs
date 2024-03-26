@@ -1,8 +1,8 @@
-﻿namespace Riotsharp.Core;
+﻿using Newtonsoft.Json;
 
-// Riot says this does not always apply so... let keep it nullable at all
+namespace Riotsharp.Core;
 
 public sealed record Status(
-    string? Message,
-    int? StatusCode
+    string Message,
+    [JsonProperty("status_code")] int Code
 );

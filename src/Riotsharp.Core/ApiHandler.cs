@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Riotsharp.Core.Exceptions;
 using System.Text;
 
@@ -52,11 +53,16 @@ public abstract class ApiHandler
         }
         catch (HttpRequestException)
         {
+            var json = JObject.Parse(
+                    await response.Content.ReadAsStringAsync());
+
             Status statusError = JsonConvert
                 .DeserializeObject<Status>(
-                    await response.Content.ReadAsStringAsync())!;
+                    JsonConvert
+                    .SerializeObject(json["status"]))!;
 
-            throw new UnsuccesfulRequestException(statusError);
+            throw new UnsuccesfulRequestException(
+                statusError);
         }
     }
 

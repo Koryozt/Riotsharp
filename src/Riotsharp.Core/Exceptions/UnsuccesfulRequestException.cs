@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace Riotsharp.Core.Exceptions;
 
 public class UnsuccesfulRequestException(Status statusError) : Exception(
-    $"Request returned a {statusError.StatusCode} with message: {statusError.Message}")
+    $"Request returned a {statusError.Code} with message: {statusError.Message}")
 {
 }
